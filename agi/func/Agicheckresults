@@ -1,0 +1,13 @@
+#!/bin/sh
+while read line
+do
+  case `expr "$line" : '\([0-9]*\) .*'` in
+    "200" ) echo $line >&2
+    exit 200;;
+    "510" ) echo $line >&2
+    exit 510;;
+    "520" ) echo $line >&2
+    exit 520;;
+    * ) echo $line >&2
+  esac
+done

@@ -1,0 +1,13 @@
+#!/bin/sh
+while read a
+do
+  if (expr "$a" = "" > /dev/null) then break;fi
+  a=`echo $a | sed -e 's/:/ /'`
+  n=0
+  for word in $a
+  do
+    n=`expr $n + 1`
+    eval word$n="$word"
+  done
+  eval $word1="$word2"
+done
